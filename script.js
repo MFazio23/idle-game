@@ -1,21 +1,28 @@
+let goldRaw = 0;
 let gold = 0;
 let goldPerClick = 1;
+let clickerPrice = 10;
+
+function removeDecimal() {
+	gold = Math.trunc(goldRaw)
+}
+
+function refresh() {
+	
+}
 
 function clickForGold() {
-	gold = gold + goldPerClick;
-  console.log(gold)
+	goldRaw = goldRaw + goldPerClick;
+  	removeDecimal()
+ 	console.log(gold)
 }
 
 function getClicker() {
-	if (gold > 10) {
+	if (gold >= clickerPrice) {
 		goldPerClick = goldPerClick * 1.5;
-    gold = gold - 10;
-  } if (gold < 10) {
-  	console.log("Not enough gold!")
+    	goldRaw = goldRaw - 10;
+    	clickerPrice = clickerPrice * 1.5;
+  	} else {
+  		console.log("Not enough gold!")
   }
-}
-
-function getDwarves() {
-	dwarves = 1;
-  goldFromDwarves * 1.25
 }
