@@ -3,7 +3,7 @@ let gold = 0;
 let goldPerClick = 1;
 let seconds = 0;
 let goldPerSecond = 0;
-
+let goldhtml = "<h1> " + gold + " </h1>"
 
 //prices of stuff
 let clickerPrice = 10;
@@ -16,6 +16,7 @@ function removeDecimal() {
 function refresh() {
 	console.log(gold);
 	removeDecimal();
+    document.getElementById("gold-display").innerHTML = "<h1> " + gold + "</h1>"
 }
 
 function clickForGold() {
@@ -48,7 +49,7 @@ function getDwarves() {
 
 function incrementSeconds() {
     goldRaw = goldRaw + goldPerSecond;
-    console.log(goldPerSecond)
+    //console.log(goldPerSecond)
 	refresh();
 }
 
