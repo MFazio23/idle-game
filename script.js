@@ -2,8 +2,10 @@
 let goldRaw = 0;
 let gold = 0;
 let goldPerClick = 1;
+let goldPerClickDisplay = 1;
 let seconds = 0;
 let goldPerSecond = 0;
+let goldPerSecondDisplay
 let goldhtml = "<h1> " + gold + " </h1>"
 
 //prices of stuff
@@ -17,12 +19,16 @@ let randomNumberFloor = 0;
 
 function removeDecimal() {
 	gold = Math.trunc(goldRaw)
+	goldPerClickDisplay = Math.trunc(goldPerClick)
+	goldPerSecondDisplay = Math.trunc(goldPerSecond)
 }
 
 function refresh() {
 	console.log(gold);
 	removeDecimal();
-    document.getElementById("gold-display").innerHTML = "<h1> Gold: " + gold + "</h1>"
+    document.getElementById("gold-display").innerHTML = "<h1>Gold: " + gold + "</h1>"
+	document.getElementById("gold-per-second").innerHTML = "<h2>Gold Per Second: " + goldPerSecondDisplay + "</h1>"
+	document.getElementById("gold-per-click").innerHTML = "<h2>Gold Per Click: " + goldPerClickDisplay + "</h1>"
 }
 
 function clickForGold() {
