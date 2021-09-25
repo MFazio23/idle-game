@@ -18,7 +18,7 @@ function removeDecimal() {
 function refresh() {
 	console.log(gold);
 	removeDecimal();
-    document.getElementById("gold-display").innerHTML = "<h1> " + gold + "</h1>"
+    document.getElementById("gold-display").innerHTML = "<h1> Gold: " + gold + "</h1>"
 }
 
 function clickForGold() {
@@ -35,6 +35,13 @@ function getClicker() {
   	} else {
   		console.log("Not enough gold!")
   }
+}
+
+function chance() {
+	let randomNumber = Math.random(0, 3)
+	if (randomNumber == 1) {
+		goldRaw = goldRaw * 1.1;
+	}
 }
 
 function getDwarves() {

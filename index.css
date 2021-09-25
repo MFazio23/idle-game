@@ -1,15 +1,25 @@
 body {
-    margin: 10px;
-    padding: 20px;
+    color: White;
+    background-color: rgb(85, 79, 66)
 }
-
+h1 {
+    font-size: 60px;
+}
 .goldclick {
-    height: 350px;
-    width: 350px;
+    height: 250px;
+    width: 250px;
     padding: 10px;
+    background: #f0f0f0 url(images/gold_test.png);
 }
-button {
+.cursorbutton {
     height: 200px;
     width: 200px;
     margin: 10px;
+    background: #f0f0f0 url(images/cursor.png);
+}
+.mysterybutton {
+    height: 200px;
+    width: 200px;
+    margin: 10px;
+    background: #f0f0f0 url(images/dice2.png);
 }
