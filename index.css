@@ -6,10 +6,10 @@ h1 {
     font-size: 60px;
 }
 .goldclick {
-    height: 250px;
-    width: 250px;
+    height: 280px;
+    width: 280px;
     padding: 10px;
-    background: #f0f0f0 url(images/gold_test.png);
+    background: #f0f0f0 url(images/click-gold.png);
 }
 .cursorbutton {
     height: 200px;

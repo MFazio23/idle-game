@@ -11,6 +11,10 @@ let clickerPrice = 10;
 let dwarfPrice = 100;
 let goldFromDwarves = 0.5; 
 
+//other stuff
+let randomNumber = 0;
+let randomNumberFloor = 0;
+
 function removeDecimal() {
 	gold = Math.trunc(goldRaw)
 }
@@ -38,7 +42,9 @@ function getClicker() {
 }
 
 function chance() {
-	let randomNumber = Math.random(0, 3)
+	randomNumber = Math.random(0, 3)
+	randomNumberFloor = Math.floor(randomNumber)
+	console.log(randomNumberFloor)
 	if (randomNumber == 1) {
 		goldRaw = goldRaw * 1.1;
 	}
