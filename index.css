@@ -1,9 +1,14 @@
 body {
     color: White;
-    background-color: rgb(85, 79, 66)
+    background-color: rgb(85, 79, 66);
+    padding: 10px;
+    font-family: 'Courier New', Courier, monospace;
 }
 h1 {
     font-size: 60px;
+}
+hr {
+    border: 2px Solid Black;
 }
 .goldclick {
     height: 280px;
@@ -22,4 +27,12 @@ h1 {
     width: 200px;
     margin: 10px;
     background: #f0f0f0 url(images/dice2.png);
+}
+.buybuildings {
+    height: 50px;
+    width: 150px;
+    font-size: medium;
+}
+.chance-explain {
+    color:rgb(207, 176, 109)
 }
