@@ -13,11 +13,10 @@ let clickerPrice = 10;
 let dwarfPrice = 100;
 let dwarfPriceDisplay = 100;
 let goldFromDwarves = 0.5;
-let dwarvesOwned = 0; 
+let dwarvesOwned = 0;
 
 //other stuff
 let randomNumber = 0;
-let randomNumberFloor = 0;
 
 function removeDecimal() {
 	gold = Math.trunc(goldRaw)
@@ -28,14 +27,14 @@ function removeDecimal() {
 }
 
 function refresh() {
-	console.log(gold);
+	//console.log(gold);
 	removeDecimal();
     document.getElementById("gold-display").innerHTML = "<h1>Gold: " + gold + "</h1>"
 	document.getElementById("gold-per-second").innerHTML = "<h2>Gold Per Second: " + goldPerSecondDisplay + "</h1>"
 	document.getElementById("gold-per-click").innerHTML = "<h2>Gold Per Click: " + goldPerClickDisplay + "</h1>"
 	//dwarves
 	document.getElementById("dwarves-display").innerHTML = "<h3>Dwarves | Cost: " + dwarfPriceDisplay + " | Gold from dwarf: " + goldFromDwarves + "/s</h3>"
-	document.getElementById("dwarves-lower-display").innerHTML = "<h3>" + dwarvesOwned + " dwarves owned producing " + goldFromDwarves + " per second</h3>" 
+	document.getElementById("dwarves-lower-display").innerHTML = "<h3>" + dwarvesOwned + " dwarves owned.</h3>" 
 }
 
 function clickForGold() {
@@ -48,18 +47,21 @@ function getClicker() {
 	if (gold >= clickerPrice) {
 		goldPerClick = goldPerClick * 1.2;
     	goldRaw = goldRaw - clickerPrice;
-		clickerPrice = clickerPrice * 1.2;
+		clickerPrice = clickerPrice * 1.5;
   	} else {
   		console.log("Not enough gold!")
   }
 }
 
 function chance() {
-	randomNumber = Math.random(0, 3)
-	randomNumberFloor = Math.floor(randomNumber)
-	console.log(randomNumberFloor)
-	if (randomNumber == 1) {
+	randomNumber = Math.floor(Math.random() * 3)
+	console.log(randomNumber)
+	if (randomNumber == 0) {
 		goldRaw = goldRaw * 1.1;
+	} if (randomNumber == 1) {
+		goldRaw = goldRaw * 1.1;
+	} if (randomNumber == 2) {
+		goldRaw = goldRaw * 0.8;
 	}
 }
 
@@ -73,6 +75,14 @@ function getDwarves() {
   	} else {
   		console.log("Not enough gold!")
   }
+}
+function dwarfUpgrade() {
+	if (goldRaw >= dwarfPrice * 5) {
+		goldFromDwarves * 1.25;
+	}
+	else {
+		alert("You don't have enough gold!")
+	}
 }
 
 function incrementSeconds() {
