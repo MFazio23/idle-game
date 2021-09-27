@@ -3,6 +3,7 @@ let goldRaw = 0;
 let gold = 0;
 let goldPerClick = 1;
 let goldPerClickDisplay = 1;
+let goldPerSecondFraction = 0;
 let seconds = 0;
 let goldPerSecond = 0;
 let goldPerSecondDisplay
@@ -58,6 +59,15 @@ function getClicker() {
   	} else {
   		console.log("Not enough gold!")
   }
+}
+
+function upgradeClicker() {
+	if (goldRaw = clickerPrice * 5) {
+		goldPerSecondFraction = goldPerSecond * 0.10;
+		goldPerClick = goldPerClick + goldPerSecondFraction;
+	} else {
+		alert("Not enough gold!")
+	}
 }
 
 function chance() {
