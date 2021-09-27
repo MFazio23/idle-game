@@ -37,7 +37,7 @@ function refresh() {
 	document.getElementById("gold-per-click").innerHTML = "<h2>Gold Per Click: " + goldPerClickDisplay + "</h1>"
 	//clicker
 	document.getElementById("cursor-display").innerHTML = "<h3>Cursor | Cost " + clickerPriceDisplay + " | Gold per click: " + goldPerClickDisplay + "</h3>"
-	document.getElementById("dwarves-lower-display").innerHTML = "<h3>" + clickersOwned + " cursors owned.</h3>"
+	document.getElementById("cursor-lower-display").innerHTML = "<h3>" + clickersOwned + " cursors owned.</h3>"
 	//dwarves
 	document.getElementById("dwarves-display").innerHTML = "<h3>Dwarves | Cost: " + dwarfPriceDisplay + " | Gold from dwarf: " + goldFromDwarves + "/s</h3>"
 	document.getElementById("dwarves-lower-display").innerHTML = "<h3>" + dwarvesOwned + " dwarves owned.</h3>" 
