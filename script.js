@@ -10,6 +10,8 @@ let goldhtml = "<h1> " + gold + " </h1>"
 
 //prices of stuff
 let clickerPrice = 10;
+let clickerPriceDisplay = 10;
+let clickersOwned = 0;
 let dwarfPrice = 100;
 let dwarfPriceDisplay = 100;
 let goldFromDwarves = 0.5;
@@ -24,6 +26,7 @@ function removeDecimal() {
 	goldPerSecondDisplay = Math.trunc(goldPerSecond)
 	clickerPriceDisplay = Math.trunc(clickerPrice)
 	dwarfPriceDisplay = Math.trunc(dwarfPrice)
+	clickerPriceDisplay = Math.trunc(clickerPrice)
 }
 
 function refresh() {
@@ -32,6 +35,9 @@ function refresh() {
     document.getElementById("gold-display").innerHTML = "<h1>Gold: " + gold + "</h1>"
 	document.getElementById("gold-per-second").innerHTML = "<h2>Gold Per Second: " + goldPerSecondDisplay + "</h1>"
 	document.getElementById("gold-per-click").innerHTML = "<h2>Gold Per Click: " + goldPerClickDisplay + "</h1>"
+	//clicker
+	document.getElementById("cursor-display").innerHTML = "<h3>Cursor | Cost " + clickerPriceDisplay + " | Gold per click: " + goldPerClickDisplay + "</h3>"
+	document.getElementById("dwarves-lower-display").innerHTML = "<h3>" + clickersOwned + " cursors owned.</h3>"
 	//dwarves
 	document.getElementById("dwarves-display").innerHTML = "<h3>Dwarves | Cost: " + dwarfPriceDisplay + " | Gold from dwarf: " + goldFromDwarves + "/s</h3>"
 	document.getElementById("dwarves-lower-display").innerHTML = "<h3>" + dwarvesOwned + " dwarves owned.</h3>" 
@@ -48,6 +54,7 @@ function getClicker() {
 		goldPerClick = goldPerClick * 1.2;
     	goldRaw = goldRaw - clickerPrice;
 		clickerPrice = clickerPrice * 1.5;
+		clickersOwned = clickersOwned + 1;
   	} else {
   		console.log("Not enough gold!")
   }
