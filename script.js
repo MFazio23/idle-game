@@ -52,17 +52,17 @@ function clickForGold() {
 
 function getClicker() {
 	if (gold >= clickerPrice) {
-		goldPerClick = goldPerClick * 1.2;
+		goldPerClick = goldPerClick * 1.5;
     	goldRaw = goldRaw - clickerPrice;
 		clickerPrice = clickerPrice * 1.5;
 		clickersOwned = clickersOwned + 1;
   	} else {
-  		console.log("Not enough gold!")
+  		alert("Not enough gold!")
   }
 }
 
 function upgradeClicker() {
-	if (goldRaw = clickerPrice * 5) {
+	if (goldRaw == clickerPrice * 5) {
 		goldPerSecondFraction = goldPerSecond * 0.10;
 		goldPerClick = goldPerClick + goldPerSecondFraction;
 	} else {
