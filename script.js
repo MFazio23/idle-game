@@ -52,7 +52,7 @@ function clickForGold() {
 
 function getClicker() {
 	if (gold >= clickerPrice) {
-		goldPerClick = goldPerClick * 1.5;
+		goldPerClick = goldPerClick * 1.3;
     	goldRaw = goldRaw - clickerPrice;
 		clickerPrice = clickerPrice * 1.5;
 		clickersOwned = clickersOwned + 1;
@@ -62,7 +62,7 @@ function getClicker() {
 }
 
 function upgradeClicker() {
-	if (goldRaw == clickerPrice * 5) {
+	if (goldRaw == clickerPrice * 2) {
 		goldPerSecondFraction = goldPerSecond * 0.10;
 		goldPerClick = goldPerClick + goldPerSecondFraction;
 	} else {
@@ -94,8 +94,8 @@ function getDwarves() {
   }
 }
 function dwarfUpgrade() {
-	if (goldRaw >= dwarfPrice * 5) {
-		goldFromDwarves * 1.25;
+	if (goldRaw >= dwarfPrice * 2) {
+		goldFromDwarves * 1.10;
 	}
 	else {
 		alert("You don't have enough gold!")
