@@ -21,6 +21,7 @@ let dwarvesOwned = 0;
 //other stuff
 let randomNumber = 0;
 
+//turning decimals into whole numbers
 function removeDecimal() {
 	gold = Math.trunc(goldRaw)
 	goldPerClickDisplay = Math.trunc(goldPerClick)
@@ -66,7 +67,7 @@ function upgradeClicker() {
 		goldPerSecondFraction = goldPerSecond * 0.10;
 		goldPerClick = goldPerClick + goldPerSecondFraction;
 	} else {
-		alert("Not enough gold!")
+		alert("You don't have enough gold!")
 	}
 }
 
@@ -90,7 +91,7 @@ function getDwarves() {
 		goldFromDwarves * 1.5;
 		dwarvesOwned = dwarvesOwned + 1;
   	} else {
-  		console.log("Not enough gold!")
+  		console.log("You don't have enough gold!")
   }
 }
 function dwarfUpgrade() {
