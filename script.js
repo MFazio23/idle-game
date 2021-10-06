@@ -13,13 +13,21 @@ let goldhtml = "<h1> " + gold + " </h1>"
 let clickerPrice = 10;
 let clickerPriceDisplay = 10;
 let clickersOwned = 0;
+//dwarves
 let dwarfPrice = 100;
 let dwarfPriceDisplay = 100;
-let goldFromDwarves = 0.5;
+let goldFromDwarves = 1;
 let dwarvesOwned = 0;
+//bulldozers
+let bulldozerPrice = 1100;
+let bulldozerPriceDisplay = 1100;
+let goldFromBulldozer = 15;
+let bulldozersOwned = 0;
 
 //other stuff
 let randomNumber = 0;
+let cancel = setInterval(incrementSeconds, 100);
+let cancel2 = setInterval(incrementSeconds2, 1000);
 
 //turning decimals into whole numbers
 function removeDecimal() {
@@ -29,6 +37,7 @@ function removeDecimal() {
 	clickerPriceDisplay = Math.trunc(clickerPrice)
 	dwarfPriceDisplay = Math.trunc(dwarfPrice)
 	clickerPriceDisplay = Math.trunc(clickerPrice)
+	bulldozerPriceDisplay = Math.trunc(bulldozerPrice)
 }
 
 function refresh() {
@@ -94,11 +103,34 @@ function getDwarves() {
   		console.log("You don't have enough gold!")
   }
 }
+
 function dwarfUpgrade() {
 	if (goldRaw >= dwarfPrice * 2) {
-		goldFromDwarves * 1.10;
+		goldFromDwarves * 2;
+		getDwarves();
+		goldRaw = goldRaw + dwarfPrice;
+	} else {
+		alert("You don't have enough gold!")
 	}
-	else {
+}
+
+function getBulldozer() {
+	if (gold >= dwarfPrice) {
+		goldPerSecond = goldPerSecond + goldFromBulldozer;
+		goldRaw = goldRaw - bulldozerPrice;
+		bulldozerPrice = bulldozerPrice * 1.2;
+		goldFromBulldozer = goldFromBulldozer * 1.2;
+	} else {
+		alert("You don't have enough gold!")
+	}
+}
+
+function bulldozerUpgrade() {
+	if (goldRaw >= bulldozerPrice * 2) {
+		goldFromBulldozer * 2;
+		getBulldozer();
+		goldRaw = goldRaw + bulldozerPrice;
+	} else {
 		alert("You don't have enough gold!")
 	}
 }
@@ -110,6 +142,3 @@ function incrementSeconds() {
 function incrementSeconds2() {
 	goldRaw = goldRaw + goldPerSecond;
 }
-
-var cancel = setInterval(incrementSeconds, 100);
-var cancel2 = setInterval(incrementSeconds2, 1000);
