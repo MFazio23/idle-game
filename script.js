@@ -16,7 +16,7 @@ let clickersOwned = 0;
 //dwarves
 let dwarfPrice = 100;
 let dwarfPriceDisplay = 100;
-let goldFromDwarves = 1;
+let goldFromDwarves = 2;
 let dwarvesOwned = 0;
 //bulldozers
 let bulldozerPrice = 1100;
@@ -41,17 +41,24 @@ function removeDecimal() {
 }
 
 function refresh() {
+	
 	//console.log(gold);
 	removeDecimal();
     document.getElementById("gold-display").innerHTML = "<h1>Gold: " + gold + "</h1>"
 	document.getElementById("gold-per-second").innerHTML = "<h2>Gold Per Second: " + goldPerSecondDisplay + "</h1>"
 	document.getElementById("gold-per-click").innerHTML = "<h2>Gold Per Click: " + goldPerClickDisplay + "</h1>"
+	
 	//clicker
 	document.getElementById("cursor-display").innerHTML = "<h3>Cursor | Cost " + clickerPriceDisplay + " | Gold per click: " + goldPerClickDisplay + "</h3>"
 	document.getElementById("cursor-lower-display").innerHTML = "<h3>" + clickersOwned + " cursors owned.</h3>"
+	
 	//dwarves
 	document.getElementById("dwarves-display").innerHTML = "<h3>Dwarves | Cost: " + dwarfPriceDisplay + " | Gold from dwarf: " + goldFromDwarves + "/s</h3>"
 	document.getElementById("dwarves-lower-display").innerHTML = "<h3>" + dwarvesOwned + " dwarves owned.</h3>" 
+	
+	//bulldozers
+	document.getElementById("bulldozer-display").innerHTML = "<h3>Bulldozer | Cost: " + bulldozerPriceDisplay + " | Gold from dwarf: " + goldFromBulldozer + "/s</h3>"
+	document.getElementById("bulldozer-lower-display").innerHTML = "<h3>" + bulldozerOwned + " bulldozers owned.</h3>" 
 }
 
 function clickForGold() {
@@ -102,16 +109,6 @@ function getDwarves() {
   	} else {
   		console.log("You don't have enough gold!")
   }
-}
-
-function dwarfUpgrade() {
-	if (goldRaw >= dwarfPrice * 2) {
-		goldFromDwarves * 2;
-		getDwarves();
-		goldRaw = goldRaw + dwarfPrice;
-	} else {
-		alert("You don't have enough gold!")
-	}
 }
 
 function getBulldozer() {

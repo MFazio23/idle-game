@@ -28,11 +28,19 @@ hr {
     margin: 10px;
     background: #f0f0f0 url(images/dice2.png);
 }
-.buybuildings {
+.buycursor {
     height: 50px;
     width: 150px;
     font-size: medium;
 }
+.buybuildings {
+    height: 50px;
+    width: 320px;
+    font-size: medium;
+}
 .chance-explain {
+    color:rgb(207, 176, 109)
+}
+h4 {
     color:rgb(207, 176, 109)
 }
