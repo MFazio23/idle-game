@@ -59,7 +59,7 @@ function refresh() {
 	
 	//bulldozers
 	document.getElementById("bulldozer-display").innerHTML = "<h3>Bulldozer | Cost: " + bulldozerPriceDisplay + " | Gold from dwarf: " + goldFromBulldozer + "/s</h3>"
-	document.getElementById("bulldozer-lower-display").innerHTML = "<h3>" + bulldozerOwned + " bulldozers owned.</h3>" 
+	document.getElementById("bulldozer-lower-display").innerHTML = "<h3>" + bulldozersOwned + " bulldozers owned.</h3>" 
 }
 
 function clickForGold() {
@@ -140,17 +140,20 @@ function incrementSeconds() {
 function incrementSeconds2() {
 	goldRaw = goldRaw + goldPerSecond;
 	timeForQuote = timeForQuote + 1;
-	if (timeForQuote == 10) {
+	if (timeForQuote == 5) {
 		pickNewQuote();
-	} else{
+		timeForQuote = 0;
+	} else {
 		console.log("No quote needed")
 	}
 }
 
 let randomQuoteNumber = 0;
-function timeForQuote() {
-	randomQuoteNumber = Math.floor(Math.random() * 3)
+function pickNewQuote() {
+	randomQuoteNumber = Math.floor(Math.random() * 1)
 	if (randomQuoteNumber == 0) {
-		document.getElementById("quotes").innerHTML = ""
+		document.getElementById("quotes").innerHTML = "<h3>My Friend Peppa Pig wins GOTY, narrowly beating Far Cry: An Evil Dictator and God of War: Revenge of the Prairie Dogs!</h3>";
+	} if (randomQuoteNumber == 1) {
+		document.getElementById("quotes").innerHTML = "<h3>Dunkin Donuts shamed by the public for not having donuts, just cheap coffee and breakfast sandwiches.</h3>"
 	}
 }
