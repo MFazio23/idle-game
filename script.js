@@ -28,6 +28,7 @@ let bulldozersOwned = 0;
 let randomNumber = 0;
 let cancel = setInterval(incrementSeconds, 100);
 let cancel2 = setInterval(incrementSeconds2, 1000);
+let timeForQuote = 1;
 
 //turning decimals into whole numbers
 function removeDecimal() {
@@ -138,4 +139,18 @@ function incrementSeconds() {
 
 function incrementSeconds2() {
 	goldRaw = goldRaw + goldPerSecond;
+	timeForQuote = timeForQuote + 1;
+	if (timeForQuote == 10) {
+		pickNewQuote();
+	} else{
+		console.log("No quote needed")
+	}
+}
+
+let randomQuoteNumber = 0;
+function timeForQuote() {
+	randomQuoteNumber = Math.floor(Math.random() * 3)
+	if (randomQuoteNumber == 0) {
+		document.getElementById("quotes").innerHTML = ""
+	}
 }
