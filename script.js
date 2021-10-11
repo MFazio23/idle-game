@@ -150,10 +150,16 @@ function incrementSeconds2() {
 
 let randomQuoteNumber = 0;
 function pickNewQuote() {
-	randomQuoteNumber = Math.floor(Math.random() * 1)
+	randomQuoteNumber = Math.floor(Math.random() * 4)
 	if (randomQuoteNumber == 0) {
 		document.getElementById("quotes").innerHTML = "<h3>My Friend Peppa Pig wins GOTY, narrowly beating Far Cry: An Evil Dictator and God of War: Revenge of the Prairie Dogs!</h3>";
 	} if (randomQuoteNumber == 1) {
 		document.getElementById("quotes").innerHTML = "<h3>Dunkin Donuts shamed by the public for not having donuts, just cheap coffee and breakfast sandwiches.</h3>"
+	} if (randomQuoteNumber == 2) {
+		document.getElementById("quotes").innerHTML = "<h3>“Society has reverted back several hundred years! Instead of money, we now just used gold as our currency! It’s a recipe for disaster!” says controversial intellectual.</h3>"
+	} if (randomQuoteNumber == 3) {
+		document.getElementById("quotes").innerHTML = "<h3>Indie games now more popular than triple-a games, making EA and Ubisoft niche companies that make games now only bought by people that wear flannel and listen to Bon Iver.</h3>" 
+	} if (randomQuoteNumber == 4) {
+		document.getElementById("quotes").innerHTML = "<h3>Golden cereal and protein shakes, now sold at a gold depot near you! Part of a complete breakfast!</h3>" 
 	}
 }
